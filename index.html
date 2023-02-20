@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="UTF-8">
+      <title>Hotel Management System | Windbound</title>
+      <link rel="stylesheet" href="styles.css">
+      <!-- Boxicons CDN link -->
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <div class="sidebar">
+         <div class="logo-details">
+            <!-- Font(Icon) from Boxicons -->
+            <i class='bx bxl-tailwind-css'></i>
+            <span class="logo-name">Windbound</span>
+         </div>
+         <ul class="nav-links">
+            <li>
+               <a href="#">
+               <i class='bx bx-grid-alt' ></i>
+               <span class="link_name">Dashboard</span>
+               </a>
+               <ul class="sub-menu blank">
+                  <li><a class="link_name">Dashboard</a></li>
+               </ul>
+            </li>
+            <li>
+               <div class="iocn-link">
+                  <a href="#">
+                  <i class='bx bx-paper-plane' ></i>
+                  <span class="link_name">Booking</span>
+                  </a>
+                  <i class='bx bxs-chevron-down arrow' ></i>
+               </div>
+               <ul class="sub-menu">
+                  <li><a class="link_name">Booking</a></li>
+                  <li><a href="#">Individual</a></li>
+                  <li><a href="#">Group</a></li>
+                  <li><a href="#">Express</a></li>
+               </ul>
+            </li>
+            <li>
+               <div class="iocn-link">
+                  <a href="#">
+                  <i class='bx bx-male-female' ></i>
+                  <span class="link_name">Customers</span>
+                  </a>
+                  <i class='bx bxs-chevron-down arrow' ></i>
+               </div>
+               <ul class="sub-menu">
+                  <li><a class="link_name">Customers</a></li>
+                  <li><a href="#">Individual</a></li>
+                  <li><a href="#">Corporate</a></li>
+               </ul>
+            </li>
+            <li>
+               <a href="#">
+               <i class='bx bx-user-check' ></i>
+               <span class="link_name">Accounts</span>
+               </a>
+               <ul class="sub-menu blank">
+                  <li><a class="link_name">Accounts</a></li>
+               </ul>
+            </li>
+            <li>
+               <a href="#">
+               <i class='bx bx-key' ></i>
+               <span class="link_name">Housekeeping</span>
+               </a>
+               <ul class="sub-menu blank">
+                  <li><a class="link_name">Housekeeping</a></li>
+                  <!-- 
+                   - Control de estado de habitaciones
+                   - Reporte de Control de limpieza
+                   - Cambiar estado de habitaciones (Sucia, En mantenimiento, Habilitada)
+                   -->
+               </ul>
+            </li>
+            <li>
+               <div class="iocn-link">
+                  <a href="#">
+                  <i class='bx bx-printer' ></i>
+                  <span class="link_name">Reports</span>
+                  </a>
+                  <i class='bx bxs-chevron-down arrow' ></i>
+               </div>
+               <ul class="sub-menu">
+                  <li><a class="link_name">Reports</a></li>
+                  <li><a href="#">By Period</a></li>
+                  <li><a href="#">By Room</a></li>
+                  <li><a href="#">By Income</a></li>
+               </ul>
+            </li>
+            <li>
+               <a href="#">
+               <i class='bx bx-dollar-circle' ></i>
+               <span class="link_name">Pricing</span>
+               </a>
+               <ul class="sub-menu blank">
+                  <li><a class="link_name">Pricing</a></li>
+               </ul>
+            </li>
+            <li>
+               <a href="#">
+               <i class='bx bx-user'></i>
+               <span class="link_name">Users</span>
+               </a>
+               <ul class="sub-menu blank">
+                  <li><a class="link_name">Users</a></li>
+               </ul>
+            </li>
+            <li>
+               <a href="#">
+               <i class='bx bx-cog' ></i>
+               <span class="link_name">Settings</span>
+               </a>
+               <ul class="sub-menu blank">
+                  <li><a class="link_name">Settings</a></li>
+               </ul>
+            </li>
+            <li>
+               <div class="profile-details">
+                  <div class="profile-content">
+                     <img src="image/profile.jpg" alt="profile">
+                  </div>
+                  <div class="name-job">
+                     <div class="profile_name">Jhon Doe</div>
+                     <div class="job">Admin</div>
+                  </div>
+                  <i class='bx bx-log-out' ></i>
+               </div>
+            </li>
+         </ul>
+      </div>
+      <section class="home-section">
+         <div class="home-content">
+            <i class="bx bx-menu"></i>
+            <span class="text">Hotel Management</span>
+         </div>
+      </section>
+      <script>
+        let arrow = document.querySelectorAll(".arrow");
+        for (var i = 0; i < arrow.length; i++) {
+            arrow[i].addEventListener("click", (e)=> {
+                let arrowParent = e.target.parentElement.parentElement;
+                console.log(arrowParent);
+                arrowParent.classList.toggle("showMenu");
+            });
+        }
+
+        let sidebar =  document.querySelector(".sidebar");
+        let sidebarBtn =  document.querySelector(".bx-menu");
+        sidebarBtn.addEventListener("click", () => {
+         sidebar.classList.toggle("close");
+        })
+      </script>
+   </body>
+</html>
